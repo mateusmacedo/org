@@ -4,7 +4,7 @@ name: Publish
 on:
   push:
     tags:
-      - v*.*.*
+      - release/**/**
 
 jobs:
   publish:
@@ -30,6 +30,14 @@ jobs:
         run: npm install
         shell: bash
 
+      - name: Build packages
+        run: npx nx run-many --target=build
+        shell: bash
+
+      - name: Verify package.json exists
+        run: test -f dist/libs/flux/package.json || echo "package.json not found"
+        shell: bash
+
       - name: Print Environment Info
         run: npx nx report
         shell: bash
@@ -38,5 +46,5 @@ jobs:
         run: npx nx release publish
         shell: bash
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_CONFIG_PROVENANCE: true
