@@ -1,5 +1,5 @@
 {
-  "name": "flux",
+  "name": "@libs/flux",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/flux/src",
   "projectType": "library",
