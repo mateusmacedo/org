@@ -44,8 +44,40 @@
     }
   },
   "release": {
+    "projectsRelationship": "independent",
+    "releaseTagPattern": "release/{projectName}/{version}",
+    "conventionalCommits": {
+      "types": {
+        "docs": {
+          "semverBump": "none"
+        },
+        "style": false,
+        "refactor": false,
+        "perf": false,
+        "test": false,
+        "build": false,
+        "ci": false,
+        "chore": false
+      }
+    },
+    "changelog": {
+      "workspaceChangelog": {
+        "createRelease": "github"
+      },
+      "projectChangelogs": {
+        "renderOptions": {
+          "authors": true,
+          "mapAuthorsToGitHubUsernames": true,
+          "commitReferences": true,
+          "versionTitleDate": true
+        }
+      }
+    },
     "version": {
-      "preVersionCommand": "npx nx run-many -t build"
+      "preVersionCommand": "npx nx run-many -t build",
+      "generatorOptions": {
+        "versionPrefix": "^"
+      }
     },
     "git": {
       "commitMessage": "chore(release): 🔖 ${version}"

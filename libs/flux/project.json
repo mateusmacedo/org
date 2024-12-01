@@ -9,6 +9,10 @@
         "packageRoot": "dist/{projectRoot}",
         "currentVersionResolver": "git-tag"
       }
+    },
+    "releaseTagPattern": "release/{version}",
+    "git": {
+      "commitMessage": "chore(release): {version}"
     }
   },
   "tags": ["lib"],
@@ -27,7 +31,10 @@
     },
     "nx-release-publish": {
       "options": {
-        "packageRoot": "dist/{projectRoot}"
+        "packageRoot": "dist/{projectRoot}",
+        "registryUrl": "https://registry.npmjs.org/",
+        "tag": "latest",
+        "access": "public"
       }
     }
   }
