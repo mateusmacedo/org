@@ -1,7 +1,7 @@
 import { Stage } from './interface/pipeline-stage';
 
 export class Pipeline<TInput, TOutput> {
-  private stages: Stage<any, any>[] = [];
+  private stages: Stage<unknown, unknown>[] = [];
 
   addStage<TStageOutput>(stage: Stage<TInput, TStageOutput>): Pipeline<TInput, TStageOutput> {
     this.stages.push(stage);
@@ -9,10 +9,10 @@ export class Pipeline<TInput, TOutput> {
   }
 
   async execute(initialData: TInput): Promise<TOutput> {
-    let result = initialData;
+    let result: unknown = initialData;
     for (const stage of this.stages) {
       result = await stage.execute(result);
     }
-    return result as unknown as TOutput;
+    return result as TOutput;
   }
 }
