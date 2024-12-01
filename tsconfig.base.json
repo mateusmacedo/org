@@ -16,7 +16,11 @@
     "sourceMap": true,
     "strict": true,
     "target": "es2019",
-    "paths": {}
+    "paths": {
+      "@org/flux": [
+        "libs/flux/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
