@@ -17,9 +17,7 @@
     "strict": true,
     "target": "es2019",
     "paths": {
-      "@org/flux": [
-        "libs/flux/src/index.ts"
-      ]
+      "@org/flux": ["libs/flux/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
