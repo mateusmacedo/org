@@ -46,6 +46,9 @@
   "release": {
     "version": {
       "preVersionCommand": "npx nx run-many -t build"
+    },
+    "git": {
+      "commitMessage": "chore(release): 🔖 ${version}"
     }
   }
 }
