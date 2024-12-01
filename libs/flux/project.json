@@ -20,7 +20,9 @@
         "outputPath": "dist/libs/flux",
         "main": "libs/flux/src/index.ts",
         "tsConfig": "libs/flux/tsconfig.lib.json",
-        "assets": []
+        "assets": [
+          "libs/flux/README.md"
+        ]
       }
     },
     "nx-release-publish": {
